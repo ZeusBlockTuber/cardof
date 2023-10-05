@@ -1,0 +1,101 @@
+html {
+    background-color: #ffffff;
+    color: #141416;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.counter-2 {
+    display: flex;
+    margin: 0 20%;
+}
+.foto {
+    border-radius: 30rem 0rem 30rem 0rem;
+    background-color: #dd2221;
+    width: 256px;
+    height: 256px;
+    padding: 1.2rem;
+}
+
+.foto img {
+    border-radius: 10rem;
+    width: 256px;
+    height: 256px;
+    transition: all 0.3s ease;
+}
+
+.name {
+    width: 256px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 304px;
+    margin-left: 2rem;
+}
+
+.bi0 {
+    margin-top: 2rem;
+}
+
+.bi0 {
+    margin: 0 36%;
+}
+
+.bio h4 {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.foto img:hover {
+    transform: scale(1.15);
+    border-radius: 7rem;
+}
+
+.end {
+    display: flex;
+    justify-content: end;
+}
+.bio h1 {
+    font-size: 3rem;
+    user-select: none;
+}
+/* Стили для светлой темы */
+.light-theme {
+    background-color: #ffffff;
+    color: #141416;
+}
+
+/* Стили для темной темы */
+.dark-theme {
+    background-color: #141416;
+    color: #ffffff;
+}
+#theme-toggle {
+    display: flex;
+    justify-content: end;
+    margin-right: 36rem;
+}
+#theme-icon {
+    width: 48px;
+    height: 48px;
+}
+.soc {
+    margin-top: 1rem;
+}
+.soc a {
+    margin-right: .5rem;
+}
+.soc img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+.soc img:hover {
+    transform: scale(1.1);
+}

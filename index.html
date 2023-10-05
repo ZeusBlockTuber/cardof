@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://baguettecss.github.io/v2/v2.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./adapt.css">
+    <link rel="shortcut icon" href="./icons/logo.svg" type="image/x-icon">
+
+    <title>Card of: Oxxxymiron</title>
+</head>
+<body>
+    <div class="counter">
+        <div id="theme-toggle">
+            <img id="theme-icon" src="./icons/moon.svg" alt="Луна">
+          </div>          
+        <div class="counter-2">
+                <div class="foto">
+                    <img src="https://avatars.mds.yandex.net/get-afishanew/23222/03fa8a63034db3107d423675b0a41956/orig" alt="">
+            </div>
+            <div class="name">
+                <h1>
+                    Мирон Фёдоров
+                </h1>
+                <h3 style="margin-top: .5rem;">Рэпер</h3>
+                <div class="soc">
+                    <a target="_blank" href="https://genius.com/artists/Oxxxymiron"><img src="./icons/social/genius.jpg" alt="Genius logo" style="border-radius: .7vh;"></a>
+                    <a target="_blank" href="https://vk.com/oxxxymiron"><img src="./icons/social/vk.svg" alt="vk logo"></a>
+                    <a target="_blank" href="https://t.me/norimyxxxo"><img src="./icons/social/telegram.svg" alt="Telegram logo"></a>
+                    <a target="_blank" href="https://www.youtube.com/@oxxxymironofficial"><img src="./icons/social/youtube.svg" alt="YouTube logo"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bi0">
+            <div class="bio">
+                <h1><<</h1>
+                <h4>Фёдоров Мирон — известный хип-хоп-артист из России, начал в 90-х. Участвовал в баттлах и основал лейбл Vagabund. В 2012 получил премию GQ. Четыре раза выиграл Versus Battle, в том числе самый просматриваемый баттл с Гнойным. Стал CEO Booking Machine в 2017, покинул в 2019. Вернулся в рэп с 2021, выпустив клип "Кто убил Марка?".</h4>
+                <!-- <h4>Ut viverra lobortis diam eu ullamcorper. Phasellus consectetur imperdiet dictum. Proin tincidunt volutpat mi, quis condimentum ligula consequat sit amet. Nullam viverra, lorem non congue aliquet, dolor mi finibus lectus, a tristique lorem libero in sem. Fusce a lobortis ligula, nec luctus mauris. Vivamus justo mauris, auctor non purus nec, ultrices mollis odio. Phasellus id risus posuere purus interdum aliquam vel vitae dui. Ut a aliquet risus. Phasellus lobortis pulvinar massa venenatis gravida. Suspendisse potenti. Integer lorem turpis, mollis eget dolor eu, lobortis cursus lectus.</h4>
+                <h4>Nulla tincidunt vulputate euismod. Nulla aliquam rhoncus augue, posuere semper purus imperdiet in. Vestibulum justo justo, vulputate at sollicitudin ut, fringilla dictum lectus. Suspendisse lacinia vestibulum metus. Fusce scelerisque aliquet cursus. Integer id velit sit amet libero consequat facilisis. Vestibulum porttitor tincidunt volutpat. Ut sed dictum elit. Sed mattis erat eros. Suspendisse ornare eu tortor facilisis fermentum.</h4> -->
+                <h1 class="end">>></h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+        const themeText = document.getElementById("theme-text");
+        
+        themeToggle.addEventListener("click", toggleTheme);
+        
+        function toggleTheme() {
+            const body = document.body;
+        
+            if (body.classList.contains("light-theme")) {
+                body.classList.remove("light-theme");
+                body.classList.add("dark-theme");
+                themeIcon.src = "./icons/sun.svg"; // Заменяем на изображение Солнца
+            } else {
+                body.classList.remove("dark-theme");
+                body.classList.add("light-theme");
+                themeIcon.src = "./icons/moon.svg"; // Заменяем на изображение Луны
+            }
+        }
+        
+        // Используйте localStorage, чтобы сохранить текущую тему при перезагрузке страницы
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-theme");
+            themeIcon.src = "./icons/sun.svg"; // Если темная тема, отображаем изображение Солнца
+        } else {
+            document.body.classList.add("light-theme");
+        }        
+    </script>
+
+</body>
+</html>
