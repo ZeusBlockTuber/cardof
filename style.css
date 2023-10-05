@@ -84,6 +84,7 @@ body {
 #theme-icon {
     width: 48px;
     height: 48px;
+    cursor: pointer;
 }
 .soc {
     margin-top: 1rem;
