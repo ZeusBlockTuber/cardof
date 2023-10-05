@@ -43,6 +43,11 @@
         </div>
     </div>
 
+    <div id="cookie-notice" class="dark-theme">
+        <p>Этот сайт использует файлы cookie для обеспечения лучшего опыта пользователя. Продолжая просмотр этого сайта, вы соглашаетесь с использованием файлов cookie.</p>
+        <button id="cookie-accept">Принять</button>
+    </div>
+
     <script>
         const themeToggle = document.getElementById("theme-icon");
         const themeIcon = document.getElementById("theme-icon");
@@ -57,19 +62,82 @@
                 body.classList.remove("light-theme");
                 body.classList.add("dark-theme");
                 themeIcon.src = "./icons/sun.svg";
+                setCookie("theme", "dark", 365); // Сохраняем тему в куки на 365 дней
             } else {
                 body.classList.remove("dark-theme");
                 body.classList.add("light-theme");
                 themeIcon.src = "./icons/moon.svg";
+                setCookie("theme", "light", 365); // Сохраняем тему в куки на 365 дней
             }
         }
         
-        if (localStorage.getItem("theme") === "dark") {
+        // Проверяем куки при загрузке страницы
+        const savedTheme = getCookie("theme");
+        if (savedTheme === "dark") {
             document.body.classList.add("dark-theme");
             themeIcon.src = "./icons/sun.svg";
         } else {
             document.body.classList.add("light-theme");
-        }        
+        }
+        
+        // Функция для установки куки
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+        
+        // Функция для получения куки по имени
+        function getCookie(name) {
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookies = decodedCookie.split(";");
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.indexOf(name + "=") === 0) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return "";
+        }            
+    </script>
+
+    <script>
+// Проверяем, есть ли куки-файл, который указывает, что пользователь уже принял уведомление о файлах cookie
+const cookieNoticeAccepted = getCookie("cookie-notice-accepted");
+const cookieNotice = document.getElementById("cookie-notice");
+
+if (!cookieNoticeAccepted) {
+    cookieNotice.style.display = "block";
+}
+
+const cookieAccept = document.getElementById("cookie-accept");
+
+cookieAccept.addEventListener("click", () => {
+    cookieNotice.style.display = "none";
+    setCookie("cookie-notice-accepted", "true", 365); // Устанавливаем куки-файл о принятии уведомления на 365 дней
+});
+
+// Функция для установки куки
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Функция для получения куки по имени
+function getCookie(name) {
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookies = decodedCookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.indexOf(name + "=") === 0) {
+            return cookie.substring(name.length + 1);
+        }
+    }
+    return "";
+}
     </script>
 
 </body>
