@@ -1,5 +1,7 @@
 html {
-    background-color: #ffffff;
+    background-image: url(./artist/oxxxymiron-background.png);
+    /* background-size: 110%; */
+    background-position: 50%;
     color: #141416;
 }
 
@@ -44,11 +46,13 @@ body {
 }
 
 .bi0 {
-    margin: 0 36%;
+    margin: 0 30%;
+}
+.bi0 h4 {
+    margin: 0 10%;
 }
 
 .bio h4 {
-    margin-bottom: 1rem;
     font-size: 1.05rem;
 }
 
@@ -67,19 +71,19 @@ body {
 }
 /* Стили для светлой темы */
 .light-theme {
-    background-color: #ffffff;
+    background-color: #ffffffb4;
     color: #141416;
 }
 
 /* Стили для темной темы */
 .dark-theme {
-    background-color: #141416;
+    background-color: #141416d0;
     color: #ffffff;
 }
 #theme-toggle {
     display: flex;
     justify-content: end;
-    margin-right: 36rem;
+    margin-right: 36vh;
 }
 #theme-icon {
     width: 48px;
@@ -130,4 +134,9 @@ body {
 
 #cookie-accept:hover {
     background-color: #0056b3;
+}
+h5 {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
 }
